@@ -5,7 +5,7 @@ import requests
 
 def make_top_100():
 
-    with open(r'D:\Coding\Python\OSRS Stock Trader\all_items.json') as data_file:
+    with open(r'D:\Coding\Python\OSRS_Stock_Trader\all_items.json') as data_file:
         all_items = json.load(data_file)
 
         r = requests.get(r'http://services.runescape.com/m=itemdb_oldschool/top100?list=0')
@@ -20,7 +20,7 @@ def make_top_100():
                                           'name': item['name']})
                     continue
 
-    with open(r'D:\Coding\Python\OSRS Stock Trader\top_100.json', 'w') as outfile:
+    with open(r'D:\Coding\Python\OSRS_Stock_Trader\top_100.json', 'w') as outfile:
         json.dump(top_100_items, outfile, indent=4)
 
 
